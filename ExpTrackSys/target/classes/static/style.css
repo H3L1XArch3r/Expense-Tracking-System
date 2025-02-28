@@ -1,0 +1,113 @@
+/* Stylish Table CSS */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f9;
+  background-image: url('https://t4.ftcdn.net/jpg/04/61/47/03/360_F_461470323_6TMQSkCCs9XQoTtyer8VCsFypxwRiDGU.jpg'); /* Add your image path here */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+h1{
+  color:#ddd;
+  text-align: center;
+}
+h2{
+   color:#ddd;
+   text-align: center;
+}
+form{ color:#ddd; font-size:18px; text-align:center;
+}
+p{
+  color:#ddd;
+  text-align: center;
+}
+caption {
+  background-color: white;
+  color: black;  /* Text color */
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  margin-top: 50px ;
+  font-size: 18px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: white;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: all 0.3s ease-in-out;
+}
+
+caption {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Responsive Table */
+@media screen and (max-width: 600px) {
+  table {
+      border: 0;
+  }
+
+  table caption {
+      font-size: 18px;
+  }
+
+  table thead {
+      display: none;
+  }
+
+  table tr {
+      display: block;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  table td {
+      display: block;
+      text-align: right;
+      font-size: 16px;
+      border-bottom: 1px solid #ddd;
+  }
+
+  table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+
+  table td:last-child {
+      border-bottom: 0;
+  }
+}

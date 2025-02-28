@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Manager</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .actions button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+
+        .actions button:hover {
+            background-color: #ddd;
+        }
+
+        #expense-list-section p {
+            text-align: center;
+            color: #888;
+        }
+    </style>
+</head>
+<body ng-app="ExpenseApp" ng-controller="ExpenseController">
+<h1>Expense Manager</h1>
+
+<!-- Form to Add Expense -->
+<div id="form-section">
+    <h2>Add Expense</h2>
+    <form ng-submit="addExpense()">
+        <label for="expense">Expense Description:</label>
+        <input type="text" id="expense" ng-model="newExpense.expense" placeholder="Enter expense description" required>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" ng-model="newExpense.amount" placeholder="Enter expense amount" required>
+        <button type="submit">Add Expense</button>
+    </form>
+</div>
+
+<!-- Expense List -->
+<div id="expense-list-section">
+    <h2>Expense List</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="expense in expenses">
+            <td>{{ expense.id }}</td>
+            <td>{{ expense.expense }}</td>
+            <td>{{ expense.amount  }}</td>
+            <td class="actions">
+                <button ng-click="deleteExpense(expense.id)">Delete</button>
+                <button ng-click="editExpense(expense)">Edit</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <p ng-if="expenses.length === 0">No expenses found.</p>
+</div>
+</body>
+</html>
