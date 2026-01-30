@@ -1,4 +1,4 @@
-xpense tracking system is designed to help users keep a close eye on their finances by offering an intuitive platform for logging expenses, setting and monitoring budgets, and tracking progress toward savings goals.
+Expense tracking system is designed to help users keep a close eye on their finances by offering an intuitive platform for logging expenses, setting and monitoring budgets, and tracking progress toward savings goals.
 The primary goal of Expense tracking system is to give users a better understanding of their spending habits.
 By logging each expense, users can categorize their purchases, allowing them to see exactly where their money is going. 
 These categories could include essentials like groceries, transportation, and utilities, as well as discretionary spending like dining out or entertainment.
